@@ -11,17 +11,17 @@ import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";
 import { createMemoryHistory } from "history";
+import SurveyPage from "views/SurveyPage/SurveyPage";
 const history = createMemoryHistory();
 
 ReactDOM.render(
   <BrowserRouter history={history}>
     <Routes>
       <Route path="/landing-page" element={<LandingPage />} />
-
       <Route path="/profile-page" element={<ProfilePage />} />
-      {/* <Route path="/login-page" component={LoginPage} /> */}
       <Route path="/" element={<Components />} />
       <Route path="/signup" element={<LoginPage />} />
+      <Route path="/survey" element={<SurveyPage />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

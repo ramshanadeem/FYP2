@@ -29,10 +29,15 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 // import SectionDownload from "./Sections/SectionDownload.js";
 
 import styles from "assets/jss/material-kit-react/views/components.js";
-
+import { useNavigate } from "react-router-dom";
 const useStyles = makeStyles(styles);
 
 export default function Components(props) {
+  const navigate = useNavigate();
+
+  const survey = () => {
+    navigate("/survey");
+  };
   const classes = useStyles();
   const { ...rest } = props;
   return (
@@ -66,6 +71,7 @@ export default function Components(props) {
                 </h1>
               </div>
               <Button
+                onClick={survey}
                 style={{
                   backgroundColor: "#70c57d",
                   width: "26%",
@@ -73,7 +79,7 @@ export default function Components(props) {
                 }}
                 round
               >
-                About Us
+                Survey
               </Button>
             </GridItem>
           </GridContainer>

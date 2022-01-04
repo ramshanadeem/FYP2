@@ -10,6 +10,7 @@ import Components from "views/Components/Components.js";
 import LandingPage from "views/LandingPage/LandingPage.js";
 import ProfilePage from "views/ProfilePage/ProfilePage.js";
 import LoginPage from "views/LoginPage/LoginPage.js";
+import DoctorSignup from "views/DoctorSignUp/DoctorSignUp";
 import { createMemoryHistory } from "history";
 import SurveyPage from "views/SurveyPage/SurveyPage";
 const history = createMemoryHistory();
@@ -22,6 +23,8 @@ ReactDOM.render(
       <Route path="/" element={<Components />} />
       <Route path="/signup" element={<LoginPage />} />
       <Route path="/survey" element={<SurveyPage />} />
+      <Route path="/doctorRegister" element={<DoctorSignup />} />
+
     </Routes>
   </BrowserRouter>,
   document.getElementById("root")

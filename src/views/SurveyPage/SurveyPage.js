@@ -31,16 +31,32 @@ import Button from "components/CustomButtons/Button.js";
 // import SectionDownload from "./Sections/SectionDownload.js";
 
 import { useNavigate } from "react-router-dom";
+import Header from "components/Header/Header";
+import HeaderLinks from "components/Header/HeaderLinks";
 
-export default function SurveyPage() {
+export default function SurveyPage(props) {
   const navigate = useNavigate();
 
   const survey = () => {
     navigate("/screeningQuestion");
   };
-
+  const Video = () => {
+    navigate("/Video");
+  };
+  const { ...rest } = props;
   return (
     <div>
+      <Header
+        brand="MHI-22"
+        rightLinks={<HeaderLinks />}
+        fixed
+        color="black"
+        changeColorOnScroll={{
+          height: 400,
+          color: "white",
+        }}
+        {...rest}
+      />
       <div style={{ backgroundColor: "#fff" }}>
         <h1
           style={{
@@ -51,6 +67,8 @@ export default function SurveyPage() {
             fontWeight: 600,
             width: "100%",
             textAlign: "center",
+
+            marginTop: "8%",
           }}
         >
           Well-Being
@@ -95,13 +113,13 @@ export default function SurveyPage() {
             }}
           >
             <Button
-              // onClick={survey}
-              color="warning"
+              onClick={Video}
+              color="danger"
               style={{
                 width: "26%",
                 //   marginLeft: "40px",
                 marginRight: "200px",
-                backgroundColor: "Blue",
+
                 height: "48px",
                 marginTop: "26px",
               }}
